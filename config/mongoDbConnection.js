@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 let mongoDbConnection = () => {
   return mongoose
     .connect(
-      "mongodb+srv://backendProject:KT3M7yS2GLg32qAo@cluster0.dzmv75i.mongodb.net/backendProject?appName=Cluster0",
+      `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.dzmv75i.mongodb.net/${process.env.MONGODB_DBNAME}?appName=Cluster0`,
     )
     .then(() => {
       console.log("Database Connected.");
